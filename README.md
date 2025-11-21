@@ -28,15 +28,39 @@
 
 Berikut adalah beberapa tangkapan layar dari halaman-halaman yang ada di aplikasi ini.
 
-| Halaman Login | Halaman Utama (Dashboard) |
-| :-----------: | :-----------------------: |
-| <img src="img/login.png" alt="Halaman Login" width="400"/> | <img src="img/dashboard.png" alt="Halaman Dashboard" width="400"/> |
+**Halaman Login**
+<img src="img/Login.png" alt="Halaman Login" width="600"/>
 
-| Halaman Fitur A | Halaman Profil Pengguna |
-| :---------------: | :-----------------------: |
-| <img src="img/fitur_a.png" alt="Halaman Fitur A" width="400"/> | <img src="img/profil.png" alt="Halaman Profil" width="400"/> |
+**Halaman Utama (Dashboard)**
+<img src="img/Dashboard.png" alt="Halaman Dashboard" width="600"/>
 
-*(**Catatan:** Pastikan nama file gambar seperti `dashboard.png`, `fitur_a.png`, dll., sesuai dengan nama file yang ada di dalam folder `img` Anda)*
+**Halaman Utama (Dashboard)**
+<img src="img/Dashboard.png" alt="Halaman Dashboard" width="600"/>
+
+**Halaman Utama (Dashboard)**
+<img src="img/Dashboard.png" alt="Halaman Dashboard" width="600"/>
+
+**Halaman Utama (Dashboard)**
+<img src="img/Dashboard.png" alt="Halaman Dashboard" width="600"/>
+
+**Halaman Utama (Dashboard)**
+<img src="img/Dashboard.png" alt="Halaman Dashboard" width="600"/>
+
+**Halaman Utama (Dashboard)**
+<img src="img/Dashboard.png" alt="Halaman Dashboard" width="600"/>
+
+**Halaman Utama (Dashboard)**
+<img src="img/Dashboard.png" alt="Halaman Dashboard" width="600"/>
+
+**Halaman Utama (Dashboard)**
+<img src="img/Dashboard.png" alt="Halaman Dashboard" width="600"/>
+
+**Halaman Utama (Dashboard)**
+<img src="img/Dashboard.png" alt="Halaman Dashboard" width="600"/>
+
+*(Untuk menambahkan gambar lain, cukup salin-tempel baris di atas dan ganti nama filenya)*
+
+*(**Catatan:** Pastikan nama file gambar seperti `dashboard.png` sesuai dengan nama file yang ada di dalam folder `img` Anda)*
 
 ## 💻 Teknologi yang Digunakan
 
@@ -88,3 +112,5 @@ Ikuti langkah-langkah berikut untuk menjalankan proyek ini di lingkungan lokal A
 Proyek ini dilisensikan di bawah Lisensi MIT.
 
 ---
+
+Dibuat dengan Akhiles Salvadore Seina Huler - NIM
