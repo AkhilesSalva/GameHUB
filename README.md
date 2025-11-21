@@ -1,11 +1,11 @@
-# Nama Proyek Anda
+# Game Hub Console
 
 <p align="center">
-  <img src="img/nama_logo_atau_gambar_utama.png" alt="Logo Proyek" width="200"/>
+  <img src="img/login.png" alt="Logo Proyek" width="400"/>
 </p>
 
 <p align="center">
-  Deskripsi singkat dan menarik tentang proyek Anda. Jelaskan apa fungsi utama dari aplikasi ini dan masalah apa yang coba diselesaikan.
+  Aplikasi panel admin untuk mengelola koleksi game. Dibuat untuk mempermudah administrator dalam menambah, mengubah, dan menghapus data game.
 </p>
 
 <p align="center">
@@ -19,10 +19,9 @@
 ---
 
 ## 🚀 Fitur
-
-*   **Fitur 1:** Penjelasan singkat tentang fitur unggulan pertama.
-*   **Fitur 2:** Penjelasan singkat tentang fitur unggulan kedua.
-*   **Fitur 3:** Penjelasan singkat tentang fitur unggulan ketiga.
+*   **Autentikasi Admin:** Halaman login khusus untuk administrator.
+*   **Manajemen Game:** Tambah, lihat, edit, dan hapus koleksi game.
+*   **Pendaftaran Admin Baru:** Fitur untuk mendaftarkan administrator baru.
 *   **Dan lain-lain...**
 
 ## 📸 Tampilan Aplikasi
@@ -37,7 +36,7 @@ Berikut adalah beberapa tangkapan layar dari halaman-halaman yang ada di aplikas
 | :---------------: | :-----------------------: |
 | <img src="img/fitur_a.png" alt="Halaman Fitur A" width="400"/> | <img src="img/profil.png" alt="Halaman Profil" width="400"/> |
 
-*(**Catatan:** Pastikan nama file gambar seperti `login.png`, `dashboard.png`, dll., sesuai dengan nama file yang ada di dalam folder `img` Anda)*
+*(**Catatan:** Pastikan nama file gambar seperti `dashboard.png`, `fitur_a.png`, dll., sesuai dengan nama file yang ada di dalam folder `img` Anda)*
 
 ## 💻 Teknologi yang Digunakan
 
@@ -52,12 +51,12 @@ Ikuti langkah-langkah berikut untuk menjalankan proyek ini di lingkungan lokal A
 
 1.  **Clone repository ini**
     ```bash
-    git clone https://github.com/username-anda/nama-repository.git
+    git clone https://github.com/username-anda/game-hub.git
     ```
 
 2.  **Masuk ke direktori proyek**
     ```bash
-    cd nama-repository
+    cd game-hub
     ```
 
 3.  **Install dependencies yang dibutuhkan** (sesuaikan dengan package manager Anda)
@@ -89,5 +88,3 @@ Ikuti langkah-langkah berikut untuk menjalankan proyek ini di lingkungan lokal A
 Proyek ini dilisensikan di bawah Lisensi MIT.
 
 ---
-
-Dibuat oleh Akhiles Salvadore Seina Huler
