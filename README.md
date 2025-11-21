@@ -90,4 +90,4 @@ Proyek ini dilisensikan di bawah Lisensi MIT.
 
 ---
 
-Dibuat dengan ❤️ oleh [Nama Anda atau Tim Anda]
+Dibuat oleh Akhiles Salvadore Seina Huler
