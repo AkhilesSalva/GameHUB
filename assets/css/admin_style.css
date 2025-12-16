@@ -1,0 +1,719 @@
+/* ============================================================================
+   GAME HUB - Admin Panel Design System
+   Version: 2.0 - Modern Gaming Aesthetic
+   ============================================================================ */
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@700&display=swap');
+
+/* ============================================================================
+   1. CSS VARIABLES
+   ============================================================================ */
+:root {
+    /* Primary Colors */
+    --primary: #00ff88;
+    --primary-dark: #00cc6a;
+    --primary-glow: rgba(0, 255, 136, 0.3);
+
+    /* Accent Colors */
+    --accent: #00d4ff;
+    --accent-dark: #00a8cc;
+    --accent-glow: rgba(0, 212, 255, 0.3);
+
+    /* Neutral Colors */
+    --bg-darkest: #050508;
+    --bg-darker: #0a0a12;
+    --bg-dark: #0f0f1a;
+    --bg-card: #12121e;
+    --bg-elevated: #1a1a2e;
+    --bg-hover: #222240;
+
+    /* Border Colors */
+    --border-dark: #1e1e35;
+    --border-light: #2a2a4a;
+
+    /* Text Colors */
+    --text-primary: #ffffff;
+    --text-secondary: #b0b0c0;
+    --text-muted: #6a6a80;
+
+    /* Status Colors */
+    --success: #00ff88;
+    --warning: #ffaa00;
+    --danger: #ff4466;
+    --info: #00d4ff;
+
+    /* Effects */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.5);
+
+    /* Typography */
+    --font-primary: 'Inter', -apple-system, sans-serif;
+    --font-display: 'Orbitron', sans-serif;
+
+    /* Spacing */
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 32px;
+    --space-2xl: 48px;
+
+    /* Border Radius */
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 16px;
+
+    /* Transitions */
+    --transition-fast: 0.15s ease;
+    --transition-normal: 0.25s ease;
+}
+
+/* ============================================================================
+   2. RESET & BASE
+   ============================================================================ */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-primary);
+    background-color: var(--bg-darkest);
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+    background-image:
+        radial-gradient(ellipse at 10% 20%, rgba(0, 255, 136, 0.03) 0%, transparent 50%),
+        radial-gradient(ellipse at 90% 80%, rgba(0, 212, 255, 0.03) 0%, transparent 50%);
+    background-attachment: fixed;
+}
+
+a {
+    text-decoration: none;
+    color: var(--accent);
+    transition: all var(--transition-normal);
+}
+
+a:hover {
+    color: var(--primary);
+}
+
+/* ============================================================================
+   3. LOADING OVERLAY
+   ============================================================================ */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-darkest);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease;
+}
+
+.loader {
+    width: 60px;
+    height: 60px;
+    border: 3px solid var(--border-dark);
+    border-radius: 50%;
+    border-top-color: var(--accent);
+    border-right-color: var(--primary);
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ============================================================================
+   4. ADMIN LAYOUT
+   ============================================================================ */
+.admin-wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 280px;
+    background: var(--bg-dark);
+    border-right: 1px solid var(--border-dark);
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 100;
+}
+
+.sidebar h2 {
+    font-family: var(--font-display);
+    text-align: center;
+    color: var(--primary);
+    font-size: 1.6em;
+    padding: var(--space-lg);
+    margin: 0;
+    text-shadow: 0 0 20px var(--primary-glow);
+    border-bottom: 1px solid var(--border-dark);
+    letter-spacing: 2px;
+}
+
+.sidebar h2::before {
+    content: '🎮 ';
+    font-size: 0.9em;
+}
+
+.sidebar nav {
+    flex: 1;
+    padding: var(--space-md) 0;
+    overflow-y: auto;
+}
+
+.sidebar nav ul {
+    list-style: none;
+}
+
+.sidebar nav ul li a {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-md) var(--space-lg);
+    color: var(--text-secondary);
+    font-weight: 500;
+    transition: all var(--transition-normal);
+    border-left: 3px solid transparent;
+    margin: var(--space-xs) 0;
+}
+
+.sidebar nav ul li a:hover {
+    background: var(--bg-elevated);
+    color: var(--text-primary);
+    border-left-color: var(--accent);
+}
+
+.sidebar nav ul li a.active {
+    background: var(--bg-elevated);
+    color: var(--accent);
+    border-left-color: var(--accent);
+    box-shadow: inset 4px 0 15px rgba(0, 212, 255, 0.1);
+}
+
+.logout-link {
+    padding: var(--space-lg);
+    border-top: 1px solid var(--border-dark);
+}
+
+.logout-link p {
+    color: var(--text-muted);
+    font-size: 0.85em;
+    margin-bottom: var(--space-sm);
+    text-align: center;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    margin-left: 280px;
+    padding: var(--space-xl);
+    background: var(--bg-darker);
+    min-height: 100vh;
+}
+
+.main-content h2 {
+    font-size: 2em;
+    color: var(--accent);
+    margin-bottom: var(--space-xl);
+    padding-bottom: var(--space-md);
+    border-bottom: 2px solid var(--border-dark);
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+}
+
+.main-content h2::before {
+    content: '';
+    width: 4px;
+    height: 1em;
+    background: linear-gradient(180deg, var(--primary), var(--accent));
+    border-radius: 2px;
+}
+
+.main-content h3 {
+    font-size: 1.3em;
+    color: var(--text-primary);
+    margin-bottom: var(--space-md);
+}
+
+/* ============================================================================
+   5. BUTTONS
+   ============================================================================ */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    padding: 12px 20px;
+    font-weight: 600;
+    font-size: 0.9em;
+    border: none;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    text-decoration: none;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+    color: var(--bg-darkest);
+    box-shadow: 0 4px 15px var(--primary-glow);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px var(--primary-glow);
+    color: var(--bg-darkest);
+}
+
+.btn-secondary {
+    background: var(--bg-elevated);
+    color: var(--text-primary);
+    border: 1px solid var(--border-light);
+}
+
+.btn-secondary:hover {
+    background: var(--bg-hover);
+    border-color: var(--accent);
+    color: var(--text-primary);
+}
+
+.btn-warning {
+    background: linear-gradient(135deg, #cc8800, var(--warning));
+    color: var(--bg-darkest);
+}
+
+.btn-warning:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 170, 0, 0.3);
+    color: var(--bg-darkest);
+}
+
+.btn-danger {
+    background: linear-gradient(135deg, #cc3355, var(--danger));
+    color: white;
+}
+
+.btn-danger:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 68, 102, 0.3);
+    color: white;
+}
+
+.btn-full {
+    width: 100%;
+}
+
+.btn-sm {
+    padding: 8px 14px;
+    font-size: 0.85em;
+}
+
+.btn-remove {
+    padding: 6px 12px;
+    font-size: 0.8em;
+}
+
+/* ============================================================================
+   6. ALERTS
+   ============================================================================ */
+.alert {
+    padding: var(--space-md) var(--space-lg);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-lg);
+    font-size: 0.9em;
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.alert-danger {
+    background: rgba(255, 68, 102, 0.1);
+    border: 1px solid var(--danger);
+    color: var(--danger);
+}
+
+.alert-success {
+    background: rgba(0, 255, 136, 0.1);
+    border: 1px solid var(--success);
+    color: var(--success);
+}
+
+/* ============================================================================
+   7. DASHBOARD GRID & STATS
+   ============================================================================ */
+.welcome-message {
+    background: var(--bg-card);
+    border: 1px solid var(--border-dark);
+    padding: var(--space-lg);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--space-xl);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.welcome-message p {
+    color: var(--text-secondary);
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--space-xl);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-lg);
+    margin-bottom: var(--space-xl);
+}
+
+.stat-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-dark);
+    padding: var(--space-xl);
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+}
+
+.stat-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--border-light);
+    box-shadow: var(--shadow-md);
+}
+
+.stat-card:hover::before {
+    opacity: 1;
+}
+
+.stat-card h3 {
+    color: var(--text-muted);
+    font-size: 0.9em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: var(--space-md);
+}
+
+.stat-card .value {
+    font-size: 2.8em;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--accent), var(--primary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.stat-card-comment {
+    background: linear-gradient(135deg, var(--accent-dark), var(--accent));
+}
+
+.stat-card-comment h3,
+.stat-card-comment .value {
+    color: var(--bg-darkest) !important;
+    -webkit-text-fill-color: var(--bg-darkest) !important;
+    background: none !important;
+}
+
+/* Activity Cards */
+.recent-activity-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-dark);
+    padding: var(--space-lg);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--space-lg);
+}
+
+.recent-activity-card h3 {
+    color: var(--accent);
+    font-size: 1.1em;
+    margin-bottom: var(--space-md);
+    padding-bottom: var(--space-sm);
+    border-bottom: 1px solid var(--border-dark);
+}
+
+.activity-list {
+    list-style: none;
+}
+
+.activity-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-md) 0;
+    border-bottom: 1px solid var(--border-dark);
+    transition: all var(--transition-fast);
+}
+
+.activity-item:last-child {
+    border-bottom: none;
+}
+
+.activity-item:hover {
+    padding-left: var(--space-sm);
+    color: var(--accent);
+}
+
+.activity-item .date {
+    font-size: 0.8em;
+    color: var(--text-muted);
+}
+
+/* ============================================================================
+   8. FORMS
+   ============================================================================ */
+.form-container {
+    background: var(--bg-card);
+    border: 1px solid var(--border-dark);
+    padding: var(--space-xl);
+    border-radius: var(--radius-lg);
+    margin-top: var(--space-lg);
+}
+
+.input-group {
+    margin-bottom: var(--space-lg);
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: var(--space-sm);
+    font-weight: 500;
+    color: var(--accent);
+    font-size: 0.9em;
+}
+
+.input-group input,
+.input-group textarea,
+.input-group select {
+    width: 100%;
+    padding: 14px var(--space-md);
+    background: var(--bg-elevated);
+    border: 1px solid var(--border-dark);
+    border-radius: var(--radius-md);
+    color: var(--text-primary);
+    font-size: 1em;
+    font-family: inherit;
+    transition: all var(--transition-normal);
+}
+
+.input-group input:focus,
+.input-group textarea:focus,
+.input-group select:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 15px var(--primary-glow);
+}
+
+.input-group textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.current-cover img {
+    max-width: 200px;
+    border-radius: var(--radius-md);
+    border: 2px solid var(--border-light);
+    margin-top: var(--space-sm);
+}
+
+/* ============================================================================
+   9. TABLES
+   ============================================================================ */
+.table-container {
+    overflow-x: auto;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-dark);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--bg-card);
+}
+
+table thead {
+    background: var(--bg-elevated);
+}
+
+table th {
+    padding: var(--space-md) var(--space-lg);
+    text-align: left;
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid var(--border-dark);
+}
+
+table td {
+    padding: var(--space-md) var(--space-lg);
+    border-bottom: 1px solid var(--border-dark);
+    color: var(--text-secondary);
+}
+
+table tbody tr {
+    transition: background var(--transition-fast);
+}
+
+table tbody tr:hover {
+    background: var(--bg-elevated);
+}
+
+table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.aksi-group {
+    display: flex;
+    gap: var(--space-sm);
+}
+
+.aksi-group .btn {
+    padding: 8px 14px;
+    font-size: 0.85em;
+}
+
+/* ============================================================================
+   10. RESPONSIVE
+   ============================================================================ */
+@media (max-width: 1200px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: var(--space-md);
+    }
+
+    .sidebar h2 {
+        width: 100%;
+        padding: var(--space-md);
+        border-bottom: 1px solid var(--border-dark);
+        margin-bottom: var(--space-md);
+    }
+
+    .sidebar nav {
+        width: 100%;
+        padding: 0;
+    }
+
+    .sidebar nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-sm);
+    }
+
+    .sidebar nav ul li a {
+        padding: var(--space-sm) var(--space-md);
+        border-left: none;
+        border-radius: var(--radius-sm);
+        font-size: 0.85em;
+    }
+
+    .sidebar nav ul li a.active {
+        border-left: none;
+        background: var(--accent);
+        color: var(--bg-darkest);
+    }
+
+    .logout-link {
+        width: 100%;
+        border-top: 1px solid var(--border-dark);
+        padding-top: var(--space-md);
+        margin-top: var(--space-md);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logout-link p {
+        margin: 0;
+    }
+
+    .logout-link .btn {
+        width: auto;
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: var(--space-md);
+    }
+
+    .main-content h2 {
+        font-size: 1.5em;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stat-card .value {
+        font-size: 2em;
+    }
+
+    .welcome-message {
+        flex-direction: column;
+        gap: var(--space-md);
+        text-align: center;
+    }
+}
