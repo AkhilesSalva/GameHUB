@@ -264,7 +264,7 @@ php -S localhost:8000
 
 | Role | Username | Password |
 |------|----------|----------|
-| Admin | admin | 123456 |
+| Admin | akhilessalv | 123456 |
 
 > ⚠️ **Catatan:** Ganti password default setelah instalasi!
 
